@@ -219,7 +219,7 @@ void run::smallWorldGraphSetup(){ //mirrors that of (Wilhite 2006)
 	assert(parallelFree(g));
 	assert(connected(g));
 }
-void run::powerGraphSetup(){ //todo: implement
+void run::powerGraphSetup(){ 
 
 	assert(cfg.N >= 3); //can't be too small
 
@@ -277,7 +277,7 @@ void run::powerGraphSetup(){ //todo: implement
 	assert(connected(g));
 }
 
-void run::print(){
+void run::print(){ //outputs the graph as a GraphML file, so I can visually check correctness
 	//cout<<"printing!"; 
 	fstream fout("output.xml", fstream::out);
 	fout<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\nxmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\nxsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns\nhttp://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n";
@@ -465,7 +465,7 @@ agent* run::wilhitePickNextAgent(){//picks random agent to act next
 		
 	}
 	
-	assert(1 == 2); //if we got down here, we didn't find an agent
+	assert(1 == 2); //if we got down here, we didn't find an agent and this function is broken
 }
 
 bool run::atLeastOneCanTrade(){
@@ -621,7 +621,7 @@ double run::getTallyTotal(){
 	return toReturn;
 }
 
-long double run::avgUtilIndirect(){
+long double run::avgUtilIndirect(){ //returns avg utility of traders that use the indirect trade heuristic
 
 	long double sum = 0;
 	long double count = 0;
@@ -635,7 +635,7 @@ long double run::avgUtilIndirect(){
 	return sum/count;
 }
 
-double run::avgUtilDirect(){
+double run::avgUtilDirect(){ //returns avg utility of traders that do NOT use the indirect trade heuristic
 
 	double sum = 0;
 	double count = 0;
@@ -688,7 +688,7 @@ double run::greatestPercentOfIndirectTally(){
 	return max/sum;
 }
 	
-
+//returns the share of total trades of the most often traded good
 double run::greatestPercentOfTotalTally(){
 
 	double max = tally.at(0);

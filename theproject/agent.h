@@ -1,5 +1,5 @@
 //this file contains the declarations for the agent class
-//todo: make copy constructor and assignment operator and such
+
 #ifndef AGENT_H
 #define AGENT_H
 #include "config.h"
@@ -53,7 +53,7 @@ public:
 	int numNeighbors() {return otherAgentConceptions.size();}
 	double getTalliesTotal() const;
 	//mutators:
-	void endow(int option); //this is the responsibility of the user, not the agent
+	void endow(int option); //this is the responsibility of the user, not the agent. option determines which good the agent has lots of
 	bool tick(); //returns true if the agent sees another potential trade partner 
 	void addNeighborConception(agent * in);
 	void setID(int in) {ID = in;}
@@ -66,7 +66,7 @@ private:
 
 	//nested classes:
 
-	struct agentConception{ //used to store beliefs about other agents
+	struct agentConception{ //used to store beliefs about other agents. Kind of obsolete, since we never have agents have inaccurate beliefs. We could easily add that, though, with this system.
 		
 		//constructors:
 		
@@ -88,7 +88,7 @@ private:
 
 	//functions:
 	void trade(agentConception partner, GOOD a, GOOD b); //trades a for b with partner
-	void setgExponents(); //todo: determine parameters
+	void setgExponents(); //exponents are always all set to 1
 	vector<pair<GOOD,GOOD>> sortMRS();
 	struct sortCriterion {
 		agent* me;
@@ -98,8 +98,8 @@ private:
 	vector<double> gQuantities; //stores the quantities of the various goods the actor owns
 	vector<double> gExponents;  //stores the exponents of the agent's Cobb-Douglas function
 	vector<agentConception> otherAgentConceptions;
-	run * home;
-	int ID;
+	run * home; //pointer to the model we are living in
+	int ID; //unique agent ID
 
 public: //second public section because I am tired of fighting the compiler on forward declarations
 	
@@ -108,6 +108,6 @@ public: //second public section because I am tired of fighting the compiler on f
 
 //other functions:
 
-void neighbors(agent& one, agent& two);
+void neighbors(agent& one, agent& two); //sets the two agents so that they are aware they are neighbors
 
 #endif
