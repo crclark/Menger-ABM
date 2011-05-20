@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "theproject", "theproject\theproject.vcproj", "{A03BD120-8BBD-4B2F-A643-C832E2A5C7ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A03BD120-8BBD-4B2F-A643-C832E2A5C7ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A03BD120-8BBD-4B2F-A643-C832E2A5C7ED}.Debug|Win32.Build.0 = Debug|Win32
+		{A03BD120-8BBD-4B2F-A643-C832E2A5C7ED}.Release|Win32.ActiveCfg = Release|Win32
+		{A03BD120-8BBD-4B2F-A643-C832E2A5C7ED}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		AMDCaPersistentConfig = Debug|Win32
+		AMDCaPersistentStartup = theproject
+		AMDCaProjectFile = C:\Users\clarkcr1\Documents\My Dropbox\schoolstuff\2010-2011\Fall 2010\BUSA 470\theproject\CodeAnalyst\theproject.caw
+	EndGlobalSection
+EndGlobal
