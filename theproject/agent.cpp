@@ -9,7 +9,6 @@
 #include <utility>
 #include <fstream>
 #include <algorithm>
-#include <conio.h>
 #include <boost/random/mersenne_twister.hpp>
 #include <boost/random/uniform_int.hpp>
 #include <boost/random/variate_generator.hpp>
@@ -174,7 +173,7 @@ bool agent::tick(){ //returns true if the agent would be able to trade again if 
 		pair<GOOD, GOOD> mrsPair; //pair of goods to be traded.
 		agentConception* tradeTarget; //agent to be traded with
 		//ü
-		vector<pair<GOOD,GOOD>> MRSList = sortMRS();
+		vector<pair<GOOD,GOOD > > MRSList = sortMRS();
 		for(int i = 0; i < MRSList.size(); i++){ //start with the highest MRS, search, make trade if possible, if not, go to next
 			mrsPair = MRSList.at(i);
 		
@@ -409,9 +408,9 @@ bool agent::neighborsCanGain(){
 	return false;
 }
 
-vector<pair<GOOD,GOOD>> agent::sortMRS(){
+vector<pair<GOOD,GOOD > > agent::sortMRS(){
 
-	vector<pair<GOOD,GOOD>> toReturn;
+	vector<pair<GOOD,GOOD > > toReturn;
 
 	//todo: sort MRS's from highest to lowest and return as vector of good pairs
 
