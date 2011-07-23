@@ -1,19 +1,22 @@
-objects = main.o run.o statsCollector.o agent.o
+OBJS = main.o run.o statsCollector.o agent.o
+CC = g++
+CFLAGS = -Wall -c
+LFLAGS = -Wall
 
-menger-abm : $(objects)
-	g++ $(objects)
+menger-abm : $(OBJS)
+	$(CC) $(LFLAGS) $(OBJS) -o menger-abm
 
 main.o : main.cpp run.h config.h statsCollector.h agent.h
-	g++ -c -Wall main.cpp
+	$(CC) $(CFLAGS) main.cpp
 
 run.o : run.cpp run.h agent.h config.h statsCollector.h
-	g++ -c -Wall run.cpp
+	$(CC) $(CFLAGS) run.cpp
 
-statsCollector.o : statsCollector.h
-	g++ -c -Wall statsCollector.cpp
+statsCollector.o : statsCollector.cpp statsCollector.h
+	$(CC) $(CFLAGS) statsCollector.cpp
 
-agent.o: config.h agent.h run.h util.h
-	g++ -c -Wall agent.cpp
+agent.o: agent.cpp config.h agent.h run.h util.h
+	$(CC) $(CFLAGS) agent.cpp
 
 clean: 
-	rm -rf $(objects)
+	rm -rf $(OBJS)
