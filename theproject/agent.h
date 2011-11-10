@@ -89,7 +89,7 @@ private:
 	//functions:
 	void trade(agentConception partner, GOOD a, GOOD b); //trades a for b with partner
 	void setgExponents(); //exponents are always all set to 1
-	vector<pair<GOOD,GOOD>> sortMRS();
+	vector<pair<GOOD,GOOD > > sortMRS();
 	struct sortCriterion {
 		agent* me;
 		bool operator()(pair<GOOD,GOOD> i, pair<GOOD,GOOD> j){return(me->getMRS(i.first,i.second) > me->getMRS(j.first,j.second));}
